@@ -16,7 +16,8 @@
     "noImplicitReturns": true,
     "outDir": "./dist/out-tsc",
     "paths": {
-      "®app/*": ["app/*"]
+      "@app/*": ["app/*"],
+      "@environments/*": ["environments/*"]
     },
     "strictNullChecks": true,
     "target": "es5",
