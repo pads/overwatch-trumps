@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { environment } from '@environments/environment';
 
 import { AppComponent } from './app.component';
@@ -11,6 +14,8 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase, 'overwatch-trumps'),
+    AngularFireAuthModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatGridListModule,

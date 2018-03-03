@@ -5,4 +5,12 @@
 
 export const environment = {
   production: false,
+  firebase: {
+    apiKey: 'AIzaSyCiyezCKfUw4RmHEDDX-F02mWMUnlpBTI0',
+    authDomain: 'vivid-torch-9261.firebaseapp.com',
+    databaseURL: 'https://vivid-torch-9261.firebaseio.com',
+    projectId: 'vivid-torch-9261',
+    storageBucket: 'vivid-torch-9261.appspot.com',
+    messagingSenderId: '507528130143',
+  },
 };
