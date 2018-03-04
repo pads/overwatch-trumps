@@ -1,0 +1,28 @@
+<form [formGroup]="options" (ngSubmit)="submit()" novalidate>
+    <mat-form-field>
+      <mat-select
+        formControlName="platform"
+        placeholder="Gaming platform"
+        required>
+        <mat-option>--</mat-option>
+        <mat-option
+          *ngFor="let platform of platforms"
+          [value]="platform">
+          {{platform}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field
+      [hideRequiredMarker]="options.value.hideRequired"
+      [floatLabel]="options.value.floatLabel">
+      <input
+        formControlName="username"
+        matInput
+        placeholder="username"
+        required>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">Submit</button>
+  </form>

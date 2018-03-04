@@ -8,13 +8,16 @@ import { AngularFireModule } from 'angularfire2';
 
 import { environment } from '@environments/environment';
 
+import { PlatformService } from '@app/platform/platform.service';
 import { PlayerModule } from '@app/player/player.module';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     AngularFireModule.initializeApp(environment.firebase, 'overwatch-trumps'),
+    AngularFirestoreModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatGridListModule,
@@ -23,7 +26,7 @@ import { AppComponent } from './app.component';
       ? ServiceWorkerModule.register('/ngsw-worker.js')
       : [],
   ],
-  providers: [],
+  providers: [PlatformService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,8 +4,12 @@
         mat-card-avatar
         [style.background-image]="'url(' + user.photoURL + ')'"></div>
       <mat-card-title>{{ user.displayName }}</mat-card-title>
+      <mat-card-subtitle>{{ (userPlatform$ | async)?.username }} ({{ (userPlatform$ | async)?.platform }})</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content *ngIf="user">
+    <ot-platform
+      *ngIf="!(userPlatform$ | async)"
+      [uid]="user.uid"></ot-platform>
   </mat-card-content>
   <mat-card-actions>
     <button
