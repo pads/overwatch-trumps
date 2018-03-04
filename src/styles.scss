@@ -6,3 +6,13 @@ $app-warn:    mat-palette($mat-red);
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 @include angular-material-theme($app-theme);
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+@include mat-base-typography($custom-typography);
+@include angular-material-typography($custom-typography);
+@include mat-core($custom-typography);

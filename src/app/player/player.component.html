@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header *ngIf="user">
+      <div
+        mat-card-avatar
+        [style.background-image]="'url(' + user.photoURL + ')'"></div>
+      <mat-card-title>{{ user.displayName }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="user">
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      *ngIf="user"
+      mat-raised-button color="accent"
+      (click)="logout()">Logout</button>
+    <button
+      *ngIf="!user"
+      mat-raised-button color="primary"
+      (click)="login()">Login</button>
+  </mat-card-actions>
+</mat-card>
